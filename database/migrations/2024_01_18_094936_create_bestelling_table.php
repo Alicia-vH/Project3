@@ -11,11 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('bestelling', function (Blueprint $table) {
+        Schema::create('order', function (Blueprint $table) {
             $table->id('orderId');
             $table->date('date');
-            $table->foreignId('id')->constrained(table: 'orderstati')->restrictOnDelete();
-            $table->timestamps();
+            $table->foreignId('orderstatus_id')->constrained(table: 'orderstati')->restrictOnDelete();
         });
     }
 
@@ -24,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('bestelling');
+        Schema::dropIfExists('order');
     }
 };

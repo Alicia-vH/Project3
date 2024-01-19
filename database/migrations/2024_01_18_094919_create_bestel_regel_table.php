@@ -11,11 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('bestel_regel', function (Blueprint $table) {
+        Schema::create('order_line', function (Blueprint $table) {
             $table->id('brId');
-            $table->integer('aantal');
-            $table->foreignId('id')->constrained(table: 'orderstati')->restrictOnDelete();
-            $table->timestamps();
+            $table->integer('amount');
+            $table->foreignId('id')->constrained(table: 'pizzasizes')->restrictOnDelete();
         });
     }
 
@@ -24,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('bestel_regel');
+        Schema::dropIfExists('order_line');
     }
 };
