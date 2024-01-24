@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('description', 50)->nullable(false);
             $table->string('factor');
+
+            $table->timestamps();
         });
     }
 

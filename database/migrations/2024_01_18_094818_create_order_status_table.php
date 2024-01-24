@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('orderstati', function (Blueprint $table) {
             $table->id();
             $table->string('description', 50)->nullable(false);
+
+            $table->timestamps();
         });
     }
 

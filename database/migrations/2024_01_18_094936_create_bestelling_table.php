@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id('orderId');
             $table->date('date');
             $table->foreignId('orderstatus_id')->constrained(table: 'orderstati')->restrictOnDelete();
+
+            $table->timestamps();
         });
     }
 

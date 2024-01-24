@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id('brId');
             $table->integer('amount');
             $table->foreignId('id')->constrained(table: 'pizzasizes')->restrictOnDelete();
+
+            $table->timestamps();
         });
     }
 

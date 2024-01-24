@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('pizza', function (Blueprint $table) {
             $table->id('pizzaId');
             $table->string('name');
+
+            $table->timestamps();
         });
     }
 
