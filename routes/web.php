@@ -21,3 +21,19 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('home.index');
 });
+
+Route::get('/about', function () {
+    return view('about.index');
+});
+
+Route::get('/menu', function () {
+    return view('menu.index');
+});
+
+Route::get('/order', function () {
+    return view('order.index');
+});
+
+Route::get('/login', function () {
+    return view('login.index');
+});
