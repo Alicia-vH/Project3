@@ -11,9 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('orderstati', function (Blueprint $table) {
+        Schema::create('klant', function (Blueprint $table) {
             $table->id();
-            $table->string('description', 50)->nullable(false);
+            $table->string('naam', 250);
+            $table->string('adres', 150);
+            $table->string('woonplaats', 100);
+            $table->string('telefoonnummer', 12);
+            $table->string('email', 150);
 
             $table->timestamps();
         });
@@ -24,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('orderstati');
+        Schema::dropIfExists('klant');
     }
 };

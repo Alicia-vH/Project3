@@ -3,6 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MenuController;
+use App\Http\Controllers\LoginController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,22 +23,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', function () {
-    return view('home.index');
-});
+Route::get('/home', [HomeController::class, "index"])->name('home.index');
 
-Route::get('/about', function () {
-    return view('about.index');
-});
+Route::get('/about', [AboutController::class, "index"])->name('about.index');
 
-Route::get('/menu', function () {
-    return view('menu.index');
-});
+Route::get('/menu', [MenuController::class, "index"])->name('menu.index');
 
-Route::get('/order', function () {
-    return view('order.index');
-});
+Route::get('/order', [OrderController::class, "index"])->name('order.index');
 
-Route::get('/login', function () {
-    return view('login.index');
-});
+Route::get('/login', [LoginController::class, "index"])->name('login.index');

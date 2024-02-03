@@ -12,9 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pizza', function (Blueprint $table) {
-            $table->id('pizzaId');
-            $table->string('name');
-
+            $table->id();
+            $table->string('naam')->nullable();
+            $table->text('beschrijving')->nullable();
+            $table->decimal('prijs')->nullable();
+            $table->string('afbeelding')->nullable();
             $table->timestamps();
         });
     }

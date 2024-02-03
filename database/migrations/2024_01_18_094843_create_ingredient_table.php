@@ -13,9 +13,8 @@ return new class extends Migration
     {
         Schema::create('ingredient', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('price');
-
+            $table->string('topping');
+            $table->decimal('prijs')->nullable();
             $table->timestamps();
         });
     }
